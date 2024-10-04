@@ -1,0 +1,494 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body & General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Navigation */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+:root {
+    /* Light mode variables */
+    --background-color: #fff;
+    --text-color: #333;
+    --link-color: #007bff;
+    --btn-bg-color: #007bff;
+    --btn-text-color: white;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    color: var(--link-color);
+}
+
+button {
+    background-color: var(--btn-bg-color);
+    color: var(--btn-text-color);
+}
+
+/* Dark mode */
+body.dark-mode {
+    --background-color: #3d3c3c;
+    --text-color: #f1f1f1;
+    --link-color: #1e90ff;
+    --btn-bg-color: #1e90ff;
+    --btn-text-color: #000;
+    title
+    {
+        color: white;
+    }
+    
+}
+
+/* Dark Mode Toggle Button */
+#dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+#toggle-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.title {
+    color: #000; /* اللون الافتراضي */
+}
+
+/* الوضع الليلي */
+body.dark-mode .title {
+    color: #fff; /* اللون في الوضع الليلي */
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+
+.social-badges {
+    margin-top: 20px;
+}
+
+.social-badges a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-badges img {
+    height: 30px;
+    /* Adjust the size of the badges */
+}
+
+/* شبكة الصور */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* يتم توزيع الصور بشكل مرن حسب حجم الشاشة */
+    gap: 15px;
+    /* المسافة بين الصور */
+    margin-top: 30px;
+}
+
+/* Thumbnail images for projects */
+.project img.thumbnail {
+    width: 150px;
+    /* Small size for thumbnail */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Hover effect: enlarge the image */
+.project img.thumbnail:hover {
+    transform: scale(2);
+    /* Enlarge the image */
+    z-index: 1000;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Button styles */
+.project .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.project .btn:hover {
+    background-color: #024994;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 100px;
+    /* ارتفاع الصور الصغيرة */
+    object-fit: cover;
+    /* لضبط الصورة بشكل متناسب داخل المساحة المحددة */
+    border-radius: 16px;
+    transition: transform 0.3s ease-in-out;
+    /* تأثير التكبير */
+    cursor: pointer;
+}
+
+.image-grid img:hover {
+    transform: scale(1.2);
+    /* تكبير الصورة عند مرور الماوس */
+}
+
+.image-grid img:active {
+    transform: scale(1.5);
+    /* تكبير الصورة عند الضغط */
+}
+
+/* Project Images */
+.project-images img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* يضمن أن الصورة تتكيف مع المساحة بدون تشويه */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* قاعدة للأجهزة الكبيرة */
+@media (min-width: 1024px) {
+    .project-images img {
+        max-width: 45%;
+        /* عرض أقل في الأجهزة الكبيرة */
+        height: auto;
+    }
+}
+
+/* قاعدة للشاشات المتوسطة */
+@media (max-width: 1024px) {
+    .project-images img {
+        max-width: 70%;
+        /* ضبط عرض الصور على الأجهزة اللوحية */
+    }
+}
+/* Project container styles */
+.project {
+    margin-bottom: 50px; /* Add space between projects */
+}
+
+/* Thumbnail images for projects */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Create a grid with 5 columns */
+    gap: 10px; /* Space between images */
+}
+
+.project img.thumbnail {
+    width: 100%; /* Each image takes full width of its grid cell */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Hover effect: enlarge the image */
+.project img.thumbnail:hover {
+    transform: scale(1.2); /* Enlarge the image */
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Button styles */
+.project .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.project .btn:hover {
+    background-color: #0056b3;
+}
+
+/* قاعدة للأجهزة الصغيرة */
+@media (max-width: 768px) {
+    .project-images img {
+        max-width: 100%;
+        /* عرض كامل للصورة على الهواتف */
+        margin-bottom: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .project-images img {
+        max-width: 90%;
+        margin-bottom: 10px;
+    }
+}
+
+#contact i {
+    margin-right: 10px;
+    color: #3498db;
+    /* You can change this color to your desired color */
+}
+
+#contact a {
+    color: #333;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    color: #3498db;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-bg.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero h1 span {
+    color: #3498db;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 25px;
+}
+
+.cta-btn:hover {
+    background-color: #2980b9;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    /* Full viewport height */
+    background-image: url('../images/download.png');
+    /* Set the path to your background image */
+    background-size: cover;
+    /* Ensures the background image covers the entire hero section */
+    background-position: center;
+    /* Centers the background image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    padding: 100px 0;
+    /* Adds padding around the content */
+    text-align: center;
+    /* Centers the content */
+    color: white;
+    /* Changes text color to white for contrast */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* Ensures the content appears above the background */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adds a dark overlay for better text visibility */
+    z-index: 1;
+    /* Places the overlay below the content */
+}
+
+.cta-btn {
+    background-color: #ff7f50;
+    /* Example button color */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.avatar {
+    width: 25%;
+    /* Adjust size as needed */
+    height: 25%;
+    /* Adjust size as needed */
+    border-radius: 50%;
+    /* Makes the image circular */
+    object-fit: cover;
+    /* Ensures the image covers the area */
+    margin-bottom: 20px;
+    /* Space between avatar and text */
+}
+
+/* Section Styles */
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.skill h3 {
+    color: #3498db;
+    margin-bottom: 0.5rem;
+}
+
+/* Project Slider */
+.project-slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.slide h3 {
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.slide p {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Slider Controls */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-slider {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
