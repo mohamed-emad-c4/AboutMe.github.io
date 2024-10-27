@@ -1,6 +1,5 @@
-let currentIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
+/* --- Begin js/scripts.js --- */
+
 // Get button and body elements
 const toggleButton = document.getElementById('toggle-button');
 const body = document.body;
@@ -25,29 +24,11 @@ toggleButton.addEventListener('click', function() {
     }
 });
 
-document.querySelector('.prev').addEventListener('click', () => {
-    currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
-    updateSlider();
-});
-
-document.querySelector('.next').addEventListener('click', () => {
-    currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
-    updateSlider();
-});
+// Image grid click events (Optional: Implement lightbox or other functionality)
 document.querySelectorAll('.image-grid img').forEach(img => {
     img.addEventListener('click', () => {
-        img.style.transform = 'scale(1.5)'; // تكبير عند الضغط
-    });
-
-    img.addEventListener('mouseleave', () => {
-        img.style.transform = 'scale(1)'; // العودة للحجم الطبيعي عند إزالة الماوس
+        // Placeholder for future image click functionality
     });
 });
-document.getElementById('toggle-button').addEventListener('click', function () {
-    document.body.classList.toggle('dark-mode');
-});
 
-function updateSlider() {
-    const slider = document.querySelector('.slides');
-    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
+/* --- End js/scripts.js --- */
